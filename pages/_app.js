@@ -1,17 +1,18 @@
 import '../styles/globals.css'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+
 
 import { AuthProvider } from '../context/AuthContext'
+import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>
+    
       <content>
-        <Header />
+      <Layout />
         <Component {...pageProps} />
-        <Footer />
       </content>
+    
     </AuthProvider>
   )
 }

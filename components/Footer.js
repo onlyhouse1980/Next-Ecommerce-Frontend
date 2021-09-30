@@ -1,17 +1,15 @@
-export default () => (
-    <footer>
-        <div>© 2020 - Alex The Entreprenerd - Development Sponsored by 
-        <a 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            href="https://magic.link/"
-        > Magic </a>
-        </div>
-        <a href="https://www.youtube.com/watch?v=385cpCpGRC0&utm_source=site">
-            <h4>
-                Learn to code this on youtube <img className="img__yt" src="/NextJS.jpg" />
-            </h4>
-                
-        </a>
-    </footer>
-)
+import React from 'react'
+import styles from '../styles/WelcomePage.module.css'
+
+
+const FooterPage = () => {
+  return (
+      <div className={styles.footer}>
+        &copy; {new Date().getFullYear()} Powered By:
+        <a href='http://anewshade.de'>
+        <img width="50px" height="50px" src="https://obcg.org/Images/anewshade.png" alt="aNewShade Logo" className={styles.footerLogo} /></a>
+      </div>
+  );
+};
+
+export default FooterPage;

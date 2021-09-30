@@ -31,7 +31,7 @@ export default () => {
                 <Link href="/">
                     <a>
                         <h1>
-                            FullStack E-Commerce with NextJS, Magic, Strapi and Stripe
+                            OBCG Payments
                         </h1>
                     </a>
                 </Link>

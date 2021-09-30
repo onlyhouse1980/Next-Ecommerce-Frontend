@@ -1,45 +1,117 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Image from 'next/image'
+import styles from '../styles/WelcomePage.module.css'
 
-import { fromImageToUrl, API_URL } from '../utils/urls'
-import { twoDecimals } from '../utils/format'
+import * as React from "react";
+import { motion } from "framer-motion";
 
-export default function Home({ products }) {
-  return (
-    <div>
-      <Head>
-        <title>Build an Ecommerce with NextJS, Magic, Strapi and Stripe</title>
-        <meta name="description" content="Learn how to build a FullStack Ecommerce in this 2 hours and a half free video sponsored by Magic" />
-      </Head>
 
-      {products.map(product => (
-        <div className={styles.product}>
-          <Link href={`/products/${product.slug}`}>
-            <a>
-              <div className={styles.product__Rows}>
-                <div className={styles.product__ColImg}>
-                  <img src={fromImageToUrl(product.image)} />
-                </div>
-                <div className={styles.product__Col}>
-                  {product.name} ${twoDecimals(product.price)}
-                </div>
-              </div>
-            </a>
-          </Link>
-        </div>
-      ))}
+const index = () => (
+  
+  <div>
+    <motion.div exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1 }}>
+    <motion.div animate={{
+        opacity: [1, 1, 0, 0, 0, 0, 0, 1, 1],        
+      }}
+      transition={{
+        duration: 15,
+        ease: "easeInOut",
+        
+        repeat: Infinity,
+        repeatDelay: 0
+      }} 
+      className={styles.bgWrap}>
+      <Image
+        alt="Orchard Beach"
+        src="/Images/WebPFiles/hero-bg.webp"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </motion.div>
+    <motion.div animate={{
+        opacity: [0, 0, 0, 1, 0, 0, 0, 0, 0],       
+      }}
+      transition={{
+        duration: 12,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 0
+      }} 
+      className={styles.bgWrap}>
+      <Image
+        alt="Sunrise"
+        src="/Images/WebPFiles/sunrise.webp"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </motion.div>
+    <motion.div animate={{
+        opacity: [0, 0, 0, 0, 0, 1, 0, 0, 0],        
+      }}
+      transition={{
+        duration: 12,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 0
+      }} 
+      className={styles.bgWrap}>
+      <Image
+        alt="Droplets"
+        src="/Images/WebPFiles/boat.webp"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </motion.div>
+    <motion.div animate={{
+        opacity: [0, 0, 0, 0, 0, 0, 0, 1, 1],        
+      }}
+      transition={{
+        duration: 12,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 0
+      }} 
+      className={styles.bgWrap}>
+      <Image
+        alt="Droplets"
+        src="/Images/WebPFiles/whale.webp"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </motion.div>
+    <motion.div animate={{
+        opacity: [1, 0, 1, 0, 1, 0, 1, 0, 1],        
+      }}
+      transition={{
+        duration: 12,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 0
+      }} 
+      className={styles.bgWrap}>
+      <Image
+        alt="Water Droplets"
+        src="/Images/WebPFiles/glass_droplets.webp"
+        filter="blur"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+      />
+    </motion.div>
+    <h2 className={styles.bgText}>
+      <b>Orchard Beach</b>
+      <br />
+      <b>Community Group</b>
+    </h2>
+    
+    </motion.div>
+
     </div>
-  )
-}
+)
 
-export async function getStaticProps() {
-  const product_res = await fetch(`${API_URL}/products/`)
-  const products = await product_res.json()
 
-  return {
-    props: {
-        products
-    }
-  }
-}
+
+export default index
