@@ -40,10 +40,10 @@ export default function BuyButton ({ product }) {
     return(
         <>
             {user &&
-                <button className={styles.buy} onClick={handleBuy}>PAY</button>
+                <button className={styles.buy} onClick={handleBuy}>Pay Online</button>
             }
             {!user &&
-                <button className={styles.buy} onClick={redirectToLogin}>Login to Pay</button>
+                <button className={styles.buy} onClick={redirectToLogin}>Login to view</button>
             }
         </>
     )

@@ -1,0 +1,19 @@
+.h3Name {
+  margin-top: 100px;
+}
+.buy {
+  position: relative;
+  width: 200px;
+  padding-left: 100px;
+  padding-right: 100px;
+  line-height: 24px;
+  background: black;
+  color: white;
+}
+
+.productDetails {
+  position: relative;
+  align-items: center;
+  text-align: center;
+  margin-top: 100px;
+}

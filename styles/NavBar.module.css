@@ -10,13 +10,13 @@
 }
 
 .navbar ul li {
-  position: fixed;
+  position: inline-block;
   text-align: center;
   top: 0;
 }
 
 .navbar ul ul {
-  position: absolute;
+  position: relative;
   text-align: center;
   width: 100%;
 }
@@ -90,4 +90,24 @@
 }
 .nav-link {
   border-bottom: 1px solid black !important;
+}
+.navbar {
+  position: inline-block;
+  top: 0;
+  left: 0;
+
+  justify-content: center;
+  align-items: space-between;
+  width: 100vw;
+  height: 70px;
+  color: white;
+  background-color: #3f51b5;
+  z-index: 100;
+  text-align: space;
+}
+
+@media screen and (min-width: 600px) {
+  .hamburger {
+    display: none;
+  }
 }

@@ -5,21 +5,32 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "startm": "micro",
+    "devm": "micro-dev"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@babel/core": "^7.15.5",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@stripe/stripe-js": "^1.11.0",
+    "axios": "^0.21.4",
+    "core-js": "^3.18.1",
     "framer-motion": "^4.1.17",
     "magic-sdk": "^3.0.1",
     "mdbreact": "^5.1.0",
     "next": "^11.1.2",
     "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
+    "next-images": "^1.8.1",
+    "nodemailer": "^6.6.5",
+    "prop-types": "^15.7.2",
     "react": "17.0.1",
+    "react-autosize-textarea": "^7.1.0",
     "react-dom": "17.0.1",
+    "react-reveal": "^1.2.2",
     "reactstrap": "^8.10.0",
+    "simple-tween": "^1.0.0",
+    "swr": "^1.0.1",
     "webpack": "^5.55.1",
     "yarn-upgrade-all": "^0.5.4"
   }

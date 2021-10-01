@@ -36,7 +36,7 @@ const useOrders = (user, getToken) => {
     return {orders, loading}
 }
 
-export default () => {
+const Account = () => {
 
     const { user, logoutUser, getToken} = useContext(AuthContext)
 
@@ -73,4 +73,6 @@ export default () => {
         </div>
     )
 
-}
+};
+
+export default Account;

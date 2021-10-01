@@ -37,7 +37,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.navbar}>
         <MDBNavbar color='indigo' dark expand='md'>
         <motion.div whileHover= {{ scale: 1.5 }} >
           <MDBNavbarBrand>
@@ -50,7 +50,7 @@ class NavBar extends React.Component {
             </a>
           </MDBNavbarBrand>
           </motion.div>
-          <MDBHamburgerToggler color="white" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} /> 
+          <MDBHamburgerToggler color="white" id="hamburger1" className={styles.hamburger} onClick={()=> this.toggleSingleCollapse('collapse1')} /> 
             
           <MDBCollapse isOpen={this.state.collapse1} navbar>
           <MDBNavbarNav left>

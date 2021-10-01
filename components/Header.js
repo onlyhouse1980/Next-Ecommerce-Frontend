@@ -6,7 +6,7 @@ import AuthContext from "../context/AuthContext"
 
 import styles from '../styles/Header.module.css'
 
-export default () => {
+const Header = () => {
 
     const router = useRouter()
     const isHome = router.pathname === "/"
@@ -53,4 +53,6 @@ export default () => {
 
         </div>
     )
-}
+};
+
+export default Header;

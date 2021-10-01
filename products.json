@@ -1,1 +1,111 @@
-[{"id":1,"name":"The Complete Strapi Course","content":"The complete strapi course, all you need to get started with Strapi  ","meta_description":"The complete strapi course, all you need to get started with Strapi  ","meta_title":"The Complete Strapi Course, available now - Entreprenerd Store","price":12.00,"published_at":"2020-11-07T14:34:31.643Z","created_at":"2020-11-07T14:34:03.087Z","updated_at":"2020-11-07T15:12:28.819Z","slug":"the-complete-strapi-course","image":{"id":1,"name":"Strapi cover image-01 (4).png","alternativeText":"","caption":"","width":750,"height":422,"formats":{"thumbnail":{"name":"thumbnail_Strapi cover image-01 (4).png","hash":"thumbnail_Strapi_cover_image_01_4_b7395cfee4","ext":".png","mime":"image/png","width":245,"height":138,"size":36.6,"path":null,"url":"/uploads/thumbnail_Strapi_cover_image_01_4_b7395cfee4.png"},"small":{"name":"small_Strapi cover image-01 (4).png","hash":"small_Strapi_cover_image_01_4_b7395cfee4","ext":".png","mime":"image/png","width":500,"height":281,"size":124.17,"path":null,"url":"/uploads/small_Strapi_cover_image_01_4_b7395cfee4.png"}},"hash":"Strapi_cover_image_01_4_b7395cfee4","ext":".png","mime":"image/png","size":218.9,"url":"/uploads/Strapi_cover_image_01_4_b7395cfee4.png","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-11-07T14:31:08.753Z","updated_at":"2020-11-07T14:31:08.764Z"}},{"id":2,"name":"The NextJS with Strapi and Hooks Course","content":"This is a premium, highly tailored course to get your career to the next level","meta_description":"The Course that will take your skills to the next level","meta_title":"NextJS with Strapi and Hooks Course - Entreprenerd Store","price":497,"published_at":"2020-11-07T14:36:52.000Z","created_at":"2020-11-07T14:36:46.841Z","updated_at":"2020-11-07T15:12:32.878Z","slug":"the-next-js-with-strapi-and-hooks-course","image":{"id":2,"name":"NextJs Strapi Course.png","alternativeText":"","caption":"","width":1920,"height":1080,"formats":{"thumbnail":{"name":"thumbnail_NextJs Strapi Course.png","hash":"thumbnail_Next_Js_Strapi_Course_5b2a28fb11","ext":".png","mime":"image/png","width":245,"height":138,"size":36.62,"path":null,"url":"/uploads/thumbnail_Next_Js_Strapi_Course_5b2a28fb11.png"},"large":{"name":"large_NextJs Strapi Course.png","hash":"large_Next_Js_Strapi_Course_5b2a28fb11","ext":".png","mime":"image/png","width":1000,"height":563,"size":410.22,"path":null,"url":"/uploads/large_Next_Js_Strapi_Course_5b2a28fb11.png"},"medium":{"name":"medium_NextJs Strapi Course.png","hash":"medium_Next_Js_Strapi_Course_5b2a28fb11","ext":".png","mime":"image/png","width":750,"height":422,"size":245.16,"path":null,"url":"/uploads/medium_Next_Js_Strapi_Course_5b2a28fb11.png"},"small":{"name":"small_NextJs Strapi Course.png","hash":"small_Next_Js_Strapi_Course_5b2a28fb11","ext":".png","mime":"image/png","width":500,"height":281,"size":119.22,"path":null,"url":"/uploads/small_Next_Js_Strapi_Course_5b2a28fb11.png"}},"hash":"Next_Js_Strapi_Course_5b2a28fb11","ext":".png","mime":"image/png","size":1114.06,"url":"/uploads/Next_Js_Strapi_Course_5b2a28fb11.png","previewUrl":null,"provider":"local","provider_metadata":null,"created_at":"2020-11-07T14:35:57.746Z","updated_at":"2020-11-07T14:35:57.754Z"}}]
+[
+  {
+    "id": 1,
+    "name": "Annual Dues",
+    "content": "OBCG Annual Fee  ",
+    "meta_description": "OBCG Annual Fee",
+    "meta_title": "OBCG Annual Fee",
+    "slug": "annual-dues",
+    "price": 500,
+    "userUse": null,
+    "published_at": "2021-09-23T23:55:03.085Z",
+    "created_at": "2021-09-23T23:54:47.119Z",
+    "updated_at": "2021-09-30T04:03:54.195Z",
+    "image": {
+      "id": 1,
+      "name": "obcglogo-p-500.png",
+      "alternativeText": "membership dues image",
+      "caption": "",
+      "width": 1080,
+      "height": 1080,
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_obcglogo-p-500.png",
+          "hash": "thumbnail_obcglogo_p_500_05e61542d1",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 156,
+          "height": 156,
+          "size": 9.94,
+          "path": null,
+          "url": "/uploads/thumbnail_obcglogo_p_500_05e61542d1.png"
+        },
+        "large": {
+          "name": "large_obcglogo-p-500.png",
+          "hash": "large_obcglogo_p_500_05e61542d1",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 1000,
+          "height": 1000,
+          "size": 85.04,
+          "path": null,
+          "url": "/uploads/large_obcglogo_p_500_05e61542d1.png"
+        },
+        "medium": {
+          "name": "medium_obcglogo-p-500.png",
+          "hash": "medium_obcglogo_p_500_05e61542d1",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 750,
+          "height": 750,
+          "size": 58.21,
+          "path": null,
+          "url": "/uploads/medium_obcglogo_p_500_05e61542d1.png"
+        },
+        "small": {
+          "name": "small_obcglogo-p-500.png",
+          "hash": "small_obcglogo_p_500_05e61542d1",
+          "ext": ".png",
+          "mime": "image/png",
+          "width": 500,
+          "height": 500,
+          "size": 34.99,
+          "path": null,
+          "url": "/uploads/small_obcglogo_p_500_05e61542d1.png"
+        }
+      },
+      "hash": "obcglogo_p_500_05e61542d1",
+      "ext": ".png",
+      "mime": "image/png",
+      "size": 18.12,
+      "url": "/uploads/obcglogo_p_500_05e61542d1.png",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_at": "2021-09-24T08:25:30.408Z",
+      "updated_at": "2021-09-30T04:03:44.829Z"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Usage Fees",
+    "content": "Please log in to view your Usage Fees",
+    "meta_description": "Usage Fees",
+    "meta_title": "Usage Fees",
+    "slug": "usage-fees",
+    "price": 0,
+    "userUse": null,
+    "published_at": "2021-09-27T11:53:23.826Z",
+    "created_at": "2021-09-27T10:18:13.668Z",
+    "updated_at": "2021-09-30T04:15:58.277Z",
+    "image": {
+      "id": 2,
+      "name": "20130821_202923.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 321,
+      "height": 321,
+      "formats": {},
+      "hash": "20130821_202923_f606b73d81",
+      "ext": ".jpg",
+      "mime": "image/gif",
+      "size": 652.06,
+      "url": "/uploads/20130821_202923_f606b73d81.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_at": "2021-09-27T10:17:40.973Z",
+      "updated_at": "2021-09-27T16:17:01.665Z"
+    }
+  }
+]

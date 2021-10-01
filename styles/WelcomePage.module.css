@@ -64,7 +64,24 @@
 .Carousel {
   position: absolute;
   left: 50%;
+  z-index: -10;
 }
 .nav-link {
   border-bottom: 1px solid black !important;
+}
+
+.navbar {
+  z-index: 100;
+}
+
+.bgText {
+  position: relative;
+  margin-top: 200px;
+  font-weight: 900;
+  z-index: 200;
+  font-size: 64px;
+  color: white;
+  border-color: black;
+  shadow: black;
+  border-radius: 13px;
 }

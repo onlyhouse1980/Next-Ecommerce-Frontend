@@ -4,6 +4,9 @@ import BuyButton from '../../components/BuyButton'
 
 import { fromImageToUrl, API_URL } from '../../utils/urls'
 import { twoDecimals } from '../../utils/format'
+import Image from 'next/image'
+import styles from '../../styles/[slug].module.css'
+
 
 const Product = ({product}) => {
   return (
@@ -20,16 +23,18 @@ const Product = ({product}) => {
             }
         
         </Head>
-
-        <h3>{product.name}</h3>
-        <img src={fromImageToUrl(product.image)} />
-        <h3>{product.name}</h3>
-        <BuyButton product={product} />
-        <p>${twoDecimals(product.price)}</p>
-
-      <p>
+        <div className={styles.productDetails}>
+        <h3 className={styles.h3Name}>{product.name}</h3>
+        <Image width="200%" height="200%" src={fromImageToUrl(product.image)} />
+        
+        <h3>{product.name}</h3>        
+        
+        <p>
         {product.content}
       </p>
+      <p>${twoDecimals(product.price)}</p>
+        <BuyButton product={product} />
+      </div>
     </div>
   )
 }

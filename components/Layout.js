@@ -1,17 +1,9 @@
 import { MDBContainer } from 'mdbreact';
 import NavBar from './NavBar';
-import Header from './Header'
 import Footer from './Footer';
 import Head from 'next/head';
 import React from 'react'
-import { AuthContext } from '../context/AuthContext'
-
-
-export async function getStaticProps(context) {
-  return {
-    props: {}, // will be passed to the page component as props
-  }
-}
+import styles from '../styles/Layout.module.css'
 
 function Layout(props) {
   return (
@@ -21,12 +13,16 @@ function Layout(props) {
       <meta name="description" content="Orchard Beach Community Group Water Management"></meta>
     </Head>
     
-      
-      <MDBContainer>{props.children}</MDBContainer>
       <NavBar />
-      <Header />
+      <MDBContainer className={styles.cntr}>{props.children}</MDBContainer>
+      
       <Footer />
-         
+      <style jsx global>{`
+        
+      .Image .resizer {
+        width: 100%; height:"auto"
+      }
+      `}</style>      
     </>
   );
 }

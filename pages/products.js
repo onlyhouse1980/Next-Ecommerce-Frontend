@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../../styles/Home.module.css'
+import styles from '../styles/Home.module.css'
 
-import { fromImageToUrl, API_URL } from '../../utils/urls'
-import { twoDecimals } from '../../utils/format'
+import { fromImageToUrl, API_URL } from '../utils/urls'
+import { twoDecimals } from '../utils/format'
+import Image from 'next/image'
 
 export default function Home({ products }) {
   return (
@@ -19,7 +20,7 @@ export default function Home({ products }) {
             <a>
               <div className={styles.product__Rows}>
                 <div className={styles.product__ColImg}>
-                  <img src={fromImageToUrl(product.image)} />
+                  <Image width="50px" height="50px" src={fromImageToUrl(product.image)} />
                 </div>
                 <div className={styles.product__Col}>
                   {product.name} ${twoDecimals(product.price)}
