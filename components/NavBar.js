@@ -186,7 +186,13 @@ class NavBar extends React.Component {
                 </Link>
               </MDBNavItem>
               </motion.div>
-              
+              <motion.div whileHover={{ scale: 1.15 }} >
+              <MDBNavItem>
+                <Link href='/login'>
+                  <a className='nav-link' onClick={this.toggleCollapse} >Login</a>
+                </Link>
+              </MDBNavItem>
+              </motion.div>
               
             </MDBNavbarNav>
           </MDBCollapse>

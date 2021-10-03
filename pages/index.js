@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const index = () => (
   
-  <div>
+  <div className={styles.contentWrapper}>
     <motion.div exit={{ opacity: 0 }} initial={{opacity: 0 }} animate={{opacity: 1 }}>
     <motion.div animate={{
         opacity: [1, 1, 0, 0, 0, 0, 0, 1, 1],        

@@ -25,7 +25,7 @@ const fetcher = async (url) => {
 export default function Over() {
   const { query } = useRouter()
   const { data, error } = useSWR(
-    () => query.last_name && `/api/overuse/${query.last_name}`,
+    () => query.name && `/api/overuse/${query.name}`,
     fetcher
   )
   if (error) return <div>Last Name not found. </div>
@@ -573,18 +573,15 @@ function galOverFebruaryFees() {
       let daysSinceAcquired = Math.floor(elapsed / (1000 * 3600 * 24));
      return daysSinceAcquired;
     }
-    const router = useRouter();
-
+    
   return ( 
- 
   <>
-  
     <Zoom top cascade>
     
-      <h1>👤 <em>{router.query.name}'s Account</em></h1>  
-        <table className={styles.table}>
-        <thead>
-        <tr className={styles.th2}>{data.last_name}<br />
+    <table className={styles.table}>
+      <thead>
+       <tr className={styles.th2}>{data.name}<br />
+        
         <td />
         <td />
           
