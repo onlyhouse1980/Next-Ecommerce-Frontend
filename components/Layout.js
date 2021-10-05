@@ -14,8 +14,7 @@ function Layout(props) {
     </Head>
     
       <NavBar />
-      <MDBContainer className={styles.cntr}>{props.children}</MDBContainer>
-      
+      <MDBContainer className={styles.pageContent}>{props.children}</MDBContainer>
       <Footer />
       <style jsx global>{`
         

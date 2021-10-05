@@ -1,21 +1,27 @@
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
 }
 
 .content {
-    background-color: rgba(255, 255, 255, 0.749);
-    box-shadow: 2px 2px 8px rgb(60, 60, 60);
-    padding: 15px 20px 150px 25px;
-
+  position: absolute;
+  top: 20px;
+  left: 25%;
+  width: 100%;
+  height: fitting !important;
+  line-height: 20px;
+  background-color: rgba(255, 255, 255, 0.749);
+  box-shadow: 2px 2px 8px rgb(60, 60, 60);
+  padding: 15px 20px 180px 25px;
+  margin: 20px 10% 20px 20px;
 }
 
 .bgcontainer {
-    display: absolute;
-    top: 0;
-    left: 0;    
-    width: auto;
-    height: 100vh;
+  display: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100vh;
 }

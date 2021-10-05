@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import Link from 'next/link'
 import Head from 'next/head'
+import styles from '../styles/Account.module.css'
 
 import AuthContext from "../context/AuthContext";
 import { API_URL } from '../utils/urls'
@@ -44,7 +45,7 @@ const Account = () => {
     
     if(!user){
         return (
-            <div>
+            <div className={styles.notuser}>
                 <p>Please Login or Register before accessing this page</p>
                 <Link href="/"><a>Go Back</a></Link>
             </div>
@@ -57,19 +58,20 @@ const Account = () => {
                 <title>Your Account</title>
                 <meta name="description" content="Your orders will be shown here" />
             </Head>
-            <h2>Account Page</h2>
+            <h2 className={styles.pagetitle} > Account Page </h2>
             
             
-            <h3>Your Orders</h3>
-            {loading && <p>Orders are Loading</p>}
+            <h3 className={styles.meaty}>Your Orders</h3>
+            {loading && <p className={styles.inas}>Orders are Loading</p>}
             {orders.map(order => (
                 <div key={order.id}>
                     {new Date(order.created_at).toLocaleDateString( 'en-EN' )} {order.product.name} ${order.total} {order.status}
                 </div>
             ))}
             <hr />
-            <p>Logged in as {user.email}</p>
-            <p><a href="#" onClick={logoutUser}>Logout</a></p>
+            <p className={styles.inas}>Logged in as {user.email}</p>
+            
+            <p className={styles.inas}><a href="#" onClick={logoutUser}>Logout</a></p>
         </div>
     )
 

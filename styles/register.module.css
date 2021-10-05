@@ -1,10 +1,17 @@
 #lnk {
-    color: white;
+  color: white;
 }
 .a {
-    color: red;
+  color: red;
+  font-weight: bold;
+  line-height: 33px;
 }
 .mdbkard {
-    padding: 10px 50px 200px 50px;
-    background-color: rgba(255, 255, 255, 0.7)
+  padding: 10px 50px 200px 50px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.userInput {
+  background: rgba(0, 25, 255, 0.7);
+  border: 1px solid black;
 }

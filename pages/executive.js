@@ -26,8 +26,10 @@ const Executive = () => (
     variants={container}
     initial="hidden"
     animate="show" className={styles.textbox}>
+    <div className={styles.heading}>
     <h2 className='text-center'><b>OBCG</b><br /><b>Executive Board</b></h2>
     <p></p>
+    </div>
     <div className={styles.divBlock}>
       <motion.div variants={item} className= {styles.content}><motion.img src="/Images/WebPFiles/team-1.webp" loading="lazy" width="300" alt="Member Photo" className={styles.Image5} />
         <div className={styles.contentNameplate}><p>Jim Farrell<br />President<br /><a className={styles.clink}><Link href="/contactus1" passHref>Contact</Link></a></p></div>

@@ -41,7 +41,7 @@ const Example = () => (
               <a href="" id="lnk"></a> 
               <div className='grey-text'>
               
-                <MDBInput
+                <MDBInput className={styles.userInput}
                   id='userInput'
                   label='Serial Number'
                   icon='user'

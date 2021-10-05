@@ -1,0 +1,26 @@
+.pagetitle {
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: 70px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.meaty {
+  position: relative;
+  display: inherit;
+  margin-left: 50px;
+  margin-right: 70px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.inas {
+  position: relative;
+  display: inherit;
+  margin-left: 50px;
+  margin-right: 70px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
