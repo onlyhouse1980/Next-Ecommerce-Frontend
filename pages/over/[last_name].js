@@ -1,10 +1,12 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
-import styles from '../person/[meter_serialNum].module.css'
+import styles from '../over/[last_name].module.css'
 import Zoom from 'react-reveal/Zoom';
 import * as React from 'react';
 import VideoBg from '../../components/VideoBg';
 import BuyButton from '../../components/BuyButton'
+
+
 
 var bgColors = { "Default": "#81b71a",
 "Blue": "#00B1E1",
@@ -29,23 +31,28 @@ export default function Over() {
     () => query.last_name && `/api/overuse/${query.last_name}`,
     fetcher
   )
+
   if (error) return <div>Last Name not found. </div>
   if (!data) return <div>Loading...</div>
-  
-  
-  
+
+
     
-     
     function moreInfo(props) {
       let info1 = parseInt(document.getElementById("info1").value);
       let info2 = parseInt(document.getElementById("info2").value);
       var Answer = document.getElementById("Percent");
         Answer.value = (((info1 - info2) / 6000 ) * 1).toFixed(2);
       }
+
+    
+      
     function galOverApril() {
       if ((data.jun10_20-data.apr05_20)>6000) {
         return <input style={{
-          backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
           type="text"
           width="5" 
           name="aprilUsed" 
@@ -55,7 +62,10 @@ export default function Over() {
         </input>;
       } else {
         return <input style={{
-          backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
           type="text" 
           name="aprilUsed" 
           id="aprOver"
@@ -66,7 +76,11 @@ export default function Over() {
     function galOverAprilFees() {
       let x = data.jun10_20-data.apr05_20
         if (x>6000 && x<10000) {
-          return <input style={{backgroundColor: bgColors.Blue}} 
+          return <input style={{
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
             type="text"
             name="greaterThan" 
             id="gTApril2020"
@@ -76,7 +90,10 @@ export default function Over() {
           </input>;
         } else if (x>10000 && x<20000) {
           return <input style={{
-              backgroundColor: bgColors.Blue}}
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                  }}
               type="text" 
               name="greaterThan" 
               id="gTApril2020t1"
@@ -86,17 +103,23 @@ export default function Over() {
           </input>;
           } else if (x>20000) {
             return <input style={{
-                backgroundColor: bgColors.Blue}}
+              backgroundColor: bgColors.Blue,
+              margin: '0 10px 0 10px',
+              width: '75px',
+            }}
                 type="text" 
                 name="greaterThan" 
                 id="gTApril2020t2"
                 value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
                 label="results" 
-                readOnly>
-            </input>;
+     >
+                   readOnly    </input>;
       } else {
         <input style={{
-            backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
             type="text" 
             name="aprGOver" 
             id="gTApril2020"
@@ -107,9 +130,12 @@ export default function Over() {
       function galOverJune() {
         if ((data.aug10_20-data.jun10_20)>6000) {
           return <input style={{
-            backgroundColor: bgColors.Blue}}
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
             type="text" 
-            min="0"
+            
             name="utilized" 
             id="junOver"
             value={(data.aug10_20-data.jun10_20)-6000}   
@@ -118,9 +144,12 @@ export default function Over() {
           </input>;
         } else {
           return <input style={{
-            backgroundColor: bgColors.Blue}}
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
             type="text" 
-            min="0"
+            
             name="utilized" 
             id="junOver"
             value="0"   
@@ -131,37 +160,50 @@ export default function Over() {
       function galOverJuneFees20() {
         let x = data.aug10_20-data.jun10_20
         if (x>6000 && x<10000) {
-          return <input style={{backgroundColor: bgColors.Blue}} 
+          return <input style={{
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
             type="text"
             name="greaterThan" 
             id="gTJune2020"
-            value= {(((x)-6000)*.005).toFixed(2)}
+            value= {"$" + (((x)-6000)*.005).toFixed(2)}
             label="results" 
             readOnly>
           </input>;
         } else if (x>10000 && x<20000) {
           return <input style={{
-              backgroundColor: bgColors.Blue}}
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                  }}
               type="text" 
               name="greaterThan" 
               id="gTJune2020t1"
-              value={(((x-10000)*.01)+19.99).toFixed(2)}
+              value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
               label="results" 
               readOnly>
           </input>;
           } else if (x>20000) {
             return <input style={{
-                backgroundColor: bgColors.Blue}}
+              backgroundColor: bgColors.Blue,
+              margin: '0 10px 0 10px',
+              width: '75px',
+            }}
                 type="text" 
                 name="greaterThan" 
                 id="gTJune2020t2"
-                value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+                value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
                 label="results" 
                 readOnly>
             </input>;
       } else {
         <input style={{
-            backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
             type="text" 
             name="junGOver" 
             id="gTJune2020"
@@ -172,9 +214,12 @@ export default function Over() {
 function galOverAugust() {
   if ((data.oct07_20-data.aug10_20)>6000) {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="augOver1"
       value={(data.oct07_20-data.aug10_20) - 6000}   
@@ -183,9 +228,12 @@ function galOverAugust() {
     </input>;
   } else {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="augOver2"
       value="0"   
@@ -196,37 +244,50 @@ function galOverAugust() {
 function galOverAugustFees() {
   let x = data.oct07_20-data.aug10_20
     if (x>6000 && x<10000) {
-      return <input style={{backgroundColor: bgColors.Blue}} 
-        type="number"
+      return <input style={{
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }} 
+        type="text"
         name="greaterThan" 
         id="gTJune2020"
-        value= {(((x)-6000)*.005).toFixed(2)} 
+        value= {"$" + (((x)-6000)*.005).toFixed(2)} 
         label="results" 
         readOnly>
       </input>;
     } else if (x>10000 && x<20000) {
       return <input style={{
-          backgroundColor: bgColors.Blue}}
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
           type="text" 
           name="greaterThan" 
           id="gTJune2020t1"
-          value={(((x-10000)*.01)+19.99).toFixed(2)}
+          value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
           label="results" 
           readOnly>
       </input>;
       } else if (x>20000) {
         return <input style={{
-            backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
             type="text" 
             name="greaterThan" 
             id="gTJune2020t2"
-            value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+            value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
             label="results" 
             readOnly>
         </input>;
   } else {
     <input style={{
-        backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
         type="text" 
         name="greaterThan" 
         id="gTAugust2020"
@@ -238,9 +299,12 @@ function galOverAugustFees() {
 function galOverOctober() {
   if ((data.dec10_20-data.oct07_20)>6000) {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="octOver"
       value={(data.dec10_20-data.oct07_20)-6000}   
@@ -249,9 +313,12 @@ function galOverOctober() {
     </input>;
   } else {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="octOver"
       value="0"   
@@ -262,37 +329,50 @@ function galOverOctober() {
 function galOverOctoberFees() {
   let x = data.dec10_20-data.oct07_20
   if (x>6000 && x<10000) {
-    return <input style={{backgroundColor: bgColors.Blue}} 
-      type="number"
+    return <input style={{
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
+      type="text"
       name="greaterThan" 
       id="gTOctober2020"
-      value= {(((x)-6000)*.005).toFixed(2)} 
+      value= {"$" + (((x)-6000)*.005).toFixed(2)} 
       label="results" 
       readOnly>
     </input>;
   } else if (x>10000 && x<20000) {
     return <input style={{
-        backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
         type="text" 
         name="greaterThan" 
         id="gTOctober2020t1"
-        value={(((x-10000)*.01)+19.99).toFixed(2)}
+        value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
         label="results" 
         readOnly>
     </input>;
     } else if (x>20000) {
       return <input style={{
-          backgroundColor: bgColors.Blue}}
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
           type="text" 
           name="greaterThan" 
           id="gTOctober2020t2"
-          value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+          value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
           label="results" 
           readOnly>
       </input>;
 } else {
   <input style={{
-      backgroundColor: bgColors.Blue}}
+    backgroundColor: bgColors.Blue,
+    margin: '0 10px 0 10px',
+    width: '75px',
+  }}
       type="text" 
       name="greaterThan" 
       id="gTOctober2020"
@@ -304,9 +384,12 @@ function galOverOctoberFees() {
 function galOverDecember() {
   if ((data.feb19_21-data.dec10_20)>6000) {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="decOver"
       value={(data.feb19_21-data.dec10_20)-6000}   
@@ -315,9 +398,12 @@ function galOverDecember() {
     </input>;
   } else {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="decOver"
       value="0"   
@@ -328,37 +414,50 @@ function galOverDecember() {
 function galOverDecemberFees() {
   let x = data.feb19_21-data.dec10_20
     if (x>6000 && x<10000) {
-      return <input style={{backgroundColor: bgColors.Blue}} 
-        type="number"
+      return <input style={{
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
+        type="text"
         name="greaterThan" 
         id="gTJune2020"
-        value= {(((x)-6000)*.005).toFixed(2)} 
+        value= {"$" + (((x)-6000)*.005).toFixed(2)} 
         label="results" 
         readOnly>
       </input>;
     } else if (x>10000 && x<20000) {
       return <input style={{
-          backgroundColor: bgColors.Blue}}
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
           type="text" 
           name="greaterThan" 
           id="gTJune2020t1"
-          value={(((x-10000)*.01)+19.99).toFixed(2)}
+          value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
           label="results" 
           readOnly>
       </input>;
       } else if (x>20000) {
         return <input style={{
-            backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
             type="text" 
             name="greaterThan" 
             id="gTJune2020t2"
-            value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+            value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
             label="results" 
             readOnly>
         </input>;
   } else {
     <input style={{
-        backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
         type="text" 
         name="greaterThan" 
         id="gTDecember2020"
@@ -370,9 +469,12 @@ function galOverDecemberFees() {
 function galOverFebruary() {
   if ((data.apr05_21-data.feb19_21)>6000) {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="febOver"
       value={(data.apr05_21-data.feb19_21)-6000}   
@@ -381,9 +483,12 @@ function galOverFebruary() {
     </input>;
   } else {
     return <input style={{
-      backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
       type="text" 
-      min="0"
+      
       name="utilized" 
       id="febOver"
       value="0"   
@@ -394,37 +499,50 @@ function galOverFebruary() {
 function galOverFebruaryFees() {
   let x = data.apr05_21-data.feb19_21
     if (x>6000 && x<10000) {
-      return <input style={{backgroundColor: bgColors.Blue}} 
-        type="number"
+      return <input style={{
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
+        type="text"
         name="greaterThan" 
         id="gTJune2020"
-        value= {(((x)-6000)*.005).toFixed(2)} 
+        value= {"$" + (((x)-6000)*.005).toFixed(2)} 
         label="results" 
         readOnly>
       </input>;
     } else if (x>10000 && x<20000) {
       return <input style={{
-          backgroundColor: bgColors.Blue}}
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
           type="text" 
           name="greaterThan" 
           id="gTJune2020t1"
-          value={(((x-10000)*.01)+19.99).toFixed(2)}
+          value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
           label="results" 
           readOnly>
       </input>;
       } else if (x>20000) {
-        return <input style={{
-            backgroundColor: bgColors.Blue}}
+        return<input style={{
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
             type="text" 
             name="greaterThan" 
             id="gTJune2020t2"
-            value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+            value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
             label="results" 
             readOnly>
         </input>;
   } else {
     <input style={{
-        backgroundColor: bgColors.Blue}}
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
         type="text" 
         name="greaterThan" 
         id="gTFebruary2020"
@@ -436,9 +554,12 @@ function galOverFebruaryFees() {
     function galOverApril21() {
       if ((data.jun04_21-data.apr05_21)>6000) {
         return <input style={{
-          backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
           type="text" 
-          min="0"
+          
           name="utilized" 
           id="aprOver"
           value={(data.jun04_21-data.apr05_21)-6000}   
@@ -447,9 +568,12 @@ function galOverFebruaryFees() {
         </input>;
       } else {
         return <input style={{
-          backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
           type="text" 
-          min="0"
+          
           name="utilized" 
           id="aprOver"
           value="0"   
@@ -460,37 +584,50 @@ function galOverFebruaryFees() {
     function galOverAprilFees21() {
       let x = data.jun04_21-data.apr05_21
         if (x>6000 && x<10000) {
-          return <input style={{backgroundColor: bgColors.Blue}} 
-            type="number"
+          return <input style={{
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
+            type="text"
             name="greaterThan" 
             id="gTApril2021"
-            value= {(((x)-6000)*.005).toFixed(2)} 
+            value= {"$" + (((x)-6000)*.005).toFixed(2)} 
             label="results" 
             readOnly>
           </input>;
         } else if (x>10000 && x<20000) {
           return <input style={{
-              backgroundColor: bgColors.Blue}}
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                  }}
               type="text" 
               name="greaterThan" 
               id="gTApril2021t1"
-              value={(((x-10000)*.01)+19.99).toFixed(2)}
+              value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
               label="results" 
               readOnly>
           </input>;
           } else if (x>20000) {
             return <input style={{
-                backgroundColor: bgColors.Blue}}
+              backgroundColor: bgColors.Blue,
+              margin: '0 10px 0 10px',
+              width: '75px',
+            }}
                 type="text" 
                 name="greaterThan" 
                 id="gTApril2021t2"
-                value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+                value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
                 label="results" 
                 readOnly>
             </input>;
       } else {
         <input style={{
-            backgroundColor: bgColors.Blue}}
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
             type="text" 
             name="greaterThan" 
             id="gTApril2020"
@@ -498,12 +635,17 @@ function galOverFebruaryFees() {
             label="results" 
             readOnly>
         </input>}}
+        
+        
         function galOverJune21() {
           if ((data.aug04_21 - data.jun04_21)>6000) {
             return <input style={{
-              backgroundColor: bgColors.Blue}}
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                  }}
               type="text" 
-              min="0"
+              
               name="utilized" 
               id="junOver"
               value={(data.aug04_21 - data.jun04_21)-6000}   
@@ -512,9 +654,12 @@ function galOverFebruaryFees() {
             </input>;
           } else {
             return <input style={{
-              backgroundColor: bgColors.Blue}}
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                  }}
               type="text" 
-              min="0"
+              
               name="utilized" 
               id="junOver"
               value="0"   
@@ -525,37 +670,50 @@ function galOverFebruaryFees() {
         function galOverJuneFees21() {
           let x = data.aug04_21 - data.jun04_21
             if (x>6000 && x<10000) {
-              return <input style={{backgroundColor: bgColors.Blue}} 
-                type="number"
+              return <input style={{
+                backgroundColor: bgColors.Blue,
+                margin: '0 10px 0 10px',
+                width: '75px',
+              }}
+                type="text"
                 name="greaterThan" 
                 id="gTJune2021"
-                value= {(((x)-6000)*.005).toFixed(2)} 
+                value= {"$" + (((x)-6000)*.005).toFixed(2)} 
                 label="results" 
                 readOnly>
               </input>;
             } else if (x>10000 && x<20000) {
               return <input style={{
-                  backgroundColor: bgColors.Blue}}
+                backgroundColor: bgColors.Blue,
+                margin: '0 10px 0 10px',
+                width: '75px',
+              }}
                   type="text" 
                   name="greaterThan" 
                   id="gTJune0421t1"
-                  value={(((x-10000)*.01)+19.99).toFixed(2)}
+                  value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
                   label="results" 
                   readOnly>
               </input>;
               } else if (x>20000) {
                 return <input style={{
-                    backgroundColor: bgColors.Blue}}
+                  backgroundColor: bgColors.Blue,
+                  margin: '0 10px 0 10px',
+                  width: '75px',
+                }}
                     type="text" 
                     name="greaterThan" 
                     id="gTJune0421t2"
-                    value={(((x-20000)*.025)+19.99+99.98).toFixed(2)}
+                    value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
                     label="results" 
                     readOnly>
                 </input>;
           } else {
             <input style={{
-                backgroundColor: bgColors.Blue}}
+              backgroundColor: bgColors.Blue,
+              margin: '0 10px 0 10px',
+              width: '75px',
+            }}
                 type="text" 
                 name="greaterThan" 
                 id="gTJune2020"
@@ -565,53 +723,144 @@ function galOverFebruaryFees() {
             </input>}}
 
 
+function galOverAugust21() {
+  if ((data.oct03_21 - data.aug04_21)>6000) {
+    return <input style={{
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
+      type="text" 
+      
+      name="utilized" 
+      id="augOver"
+      value={(data.oct03_21 - data.aug04_21)-6000}   
+      label="galOver" 
+      readOnly>
+    </input>;
+  } else {
+    return <input style={{
+            backgroundColor: bgColors.Blue,
+            margin: '0 10px 0 10px',
+            width: '75px',
+          }}
+      type="text" 
+      
+      name="utilized" 
+      id="augOver"
+      value="0"   
+      label="galOver" 
+      readOnly>
+    </input>}}
+
+function galOverAugustFees21() {
+  let x = data.oct03_21 - data.aug04_21
+    if (x>6000 && x<10000) {
+      return <input style={{
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
+        type="text"
+        name="greaterThan" 
+        id="gTAugust2021"
+        value= {"$" + (((x)-6000)*.005).toFixed(2)} 
+        label="results" 
+        readOnly>
+      </input>;
+    } else if (x>10000 && x<20000) {
+      return <input style={{
+        backgroundColor: bgColors.Blue,
+        margin: '0 10px 0 10px',
+        width: '75px',
+      }}
+          type="text" 
+          name="greaterThan" 
+          id="gTAugust0421t1"
+          value={"$" + (((x-10000)*.01)+19.99).toFixed(2)}
+          label="results" 
+          readOnly>
+      </input>;
+      } else if (x>20000) {
+        return <input style={{
+          backgroundColor: bgColors.Blue,
+          margin: '0 10px 0 10px',
+          width: '75px',
+        }}
+            type="text" 
+            name="greaterThan" 
+            id="gTAugust0421t2"
+            value={"$" + (((x-20000)*.025)+19.99+99.98).toFixed(2)}
+            label="results" 
+            readOnly>
+        </input>;
+  } else {
+    <input style={{
+      backgroundColor: bgColors.Blue,
+      margin: '0 10px 0 10px',
+      width: '75px',
+    }}
+        type="text" 
+        name="greaterThan" 
+        id="gTAugust2021"
+        value="$0"
+        label="results" 
+        readOnly>
+    </input>}}
+
+
+
     
-
-    function daysInCycle() {
-      let now = new Date();
-      let acquired = new Date(this.dateAqquired);
-      let elapsed = now - acquired; //elapsed time in milliseconds
-      let daysSinceAcquired = Math.floor(elapsed / (1000 * 3600 * 24));
-     return daysSinceAcquired;
-    }
     const router = useRouter();
-
+    
+    function findTotal(){
+      let arr = document.getElementsByName('greaterThan');
+      var tot=0;
+      for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+          tot += parseInt(arr[i].value);
+      }
+      var anual = document.getElementById('anual');
+      anual.value = tot;
+    }
   return ( 
- 
-  <><>
-      <div>
-        <Zoom top cascade>
 
-          <h1>👤 <em>{router.query.name} Account</em></h1>
+  
+    
+ <main style={{width: '100vw', height: '100vh', width: '100%' , margin: '100px 0 0 0', paddingBottom: '50px'}}>
+  
+      
+        <Zoom top cascade>
+          <div classname={styles.title}>
+          <h1 className={styles.pageheader}>👤 <em>{router.query.name} {data.last_name}</em></h1>
+          </div>
           <table className={styles.table}>
             <thead>
-              <tr className={styles.th2}>{data.last_name}<br />
+              <tr style={{ fontWeight:'900', fontSize:'30' }} className={styles.th2}><br />
                 <td />
-                <td />
-
-
                 <td>
-                  <th className={styles.th2}>#{data.meter_serialNum}</th>
+                  <th style={{ fontWeight:'900' }} className={styles.th2}>Meter Serial</th>                
+                </td>
+                <td>
+                <th style={{ fontWeight:'900' }} className={styles.th2}>#{data.meter_serialNum}</th>
                 </td>
               </tr>
               <tr className={styles.th2}>
                 <td>Billing Period</td>
                 <td>Gallons Used</td>
                 <td>Gallons Over</td>
-                <td>Additional Fee</td>
+                <td>Charge/Fee</td>
               </tr>
-
             </thead>
             <tbody>
-
-
-
               <tr>
                 <td className={styles.td3}><p className={styles.p}>June 2020</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0, position: 'relative' }}>(6/11/20-8/10/20)</p></td>
+                  <p style={{ fontSize: 9, width:'75px', color: 'white', margin: '-20px 0 0 10px', padding: 0, position: 'relative' }}>(6/11/20-8/10/20)</p></td>
                 <td className={styles.td3}>
                   <input style={{
-                    backgroundColor: bgColors.Blue
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -630,11 +879,13 @@ function galOverFebruaryFees() {
               </tr>
               <tr>
                 <td className={styles.td3}><p className={styles.p}>August 2020</p><br />
-                  <p style={{ fontSize: 10, color: 'white', margin: '-20px 0 0 10px', paddingTop: '-10px' }}>(8/11/20-10/7/20)</p>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-40px 0 0 10px', paddingTop: '-10px' }}>(08/11-10/07)</p>
                 </td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -653,10 +904,12 @@ function galOverFebruaryFees() {
               </tr>
               <tr>
                 <td className={styles.td3}><p className={styles.p}>October 2020</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0 }}>(10/7/20-12/10/20)</p></td>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>(10/07-12/10)</p></td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -675,10 +928,12 @@ function galOverFebruaryFees() {
               </tr>
               <tr>
                 <td className={styles.td3}><p className={styles.p}>December 2020</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0 }}>(12/11/20-02/19/21)</p></td>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>(12/11-02/19)</p></td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -695,12 +950,15 @@ function galOverFebruaryFees() {
                   {galOverDecemberFees()}
                 </td>
               </tr>
+
               <tr>
                 <td className={styles.td3}><p className={styles.p}>February 2021</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0 }}>(02/20/21-04/05/21)</p></td>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>(02/20-04/05)</p></td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -721,10 +979,12 @@ function galOverFebruaryFees() {
 
               <tr>
                 <td className={styles.td3}><p className={styles.p}>April 2021</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0 }}>(04/05/21-06/04/21)</p></td>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>(04/05-06/04)</p></td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -745,10 +1005,12 @@ function galOverFebruaryFees() {
 
               <tr>
                 <td className={styles.td3}><p className={styles.p}>June 2021</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0 }}>(06/04/21 - 08/04/21)</p></td>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>(06/04-08/04)</p></td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -766,12 +1028,43 @@ function galOverFebruaryFees() {
                   {galOverJuneFees21()}
                 </td>
               </tr>
+
+              <tr>
+                <td className={styles.td3}><p className={styles.p}>August 2021</p>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>(08/04-10/03)</p></td>
+                <td className={styles.td3}>
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                  }}
+                    type="text"
+                    name="utilized"
+                    id="August2021"
+                    value={data.oct03_21 - data.aug04_21}
+                    label="answers"
+                    readOnly
+                  >
+                  </input>
+                </td>
+                <td className={styles.td3}>
+                  {galOverAugust21()}
+                </td>
+                <td className={styles.td3}>
+                  {galOverAugustFees21()}
+                </td>
+              </tr>
+
+
               <tr>
                 <td className={styles.td3}><p className={styles.p}>Annual Fees</p>
-                  <p style={{ fontSize: 10, color: 'white', margin: '0 0 0 10px', padding: 0 }}>(06/04/21 - 08/04/21)</p></td>
+                  <p style={{ fontSize: 9, width:'75px',  color: 'white', margin: '-20px 0 0 10px', padding: 0 }}>Membership</p></td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <div style={{
+                    display: 'hidden',
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
@@ -780,11 +1073,15 @@ function galOverFebruaryFees() {
                     label="answers"
                     readOnly
                   >
-                  </input>
+                  </div>
                 </td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <div style={{
+                    display: 'hidden',
+                    backgroundColor: 'transparent',
+                    margin: '0 10px 0 10px',
+                    width: '75px',
+                    
                   }}
                     type="text"
                     name="utilized"
@@ -792,55 +1089,50 @@ function galOverFebruaryFees() {
                     value={0}
                     label="answers"
                     readOnly>
-                  </input>
+                  </div>
                 </td>
                 <td className={styles.td3}>
-                  <input style={{
-                    backgroundColor: bgColors.Blue
+                <input style={{
+                    backgroundColor: bgColors.Blue,
+                    margin: '0 10px 0 10px',
+                    width: '75px',
                   }}
                     type="text"
                     name="utilized"
                     id="Annual"
-                    value={"500" + "." + "00"}
+                    value={"$" + "500" + "." + "00"}
                     label="answers"
                     readOnly>
                   </input>
                 </td>
               </tr>
-            </tbody>
-
-            <div className={styles.div4}>
-              
-                <p className={styles.pt} style={{ fontSize: 20, color: 'black', margin: '0 0 0 10px', padding: 0 }}>Total</p>
-              
-              
-                <span>
-                <input className={styles.div4} 
-                  style={{backgroundColor: bgColors.Blue}}
-                  type="text"
-                  name="utilized"
-                  id="Annual"
-                  value={0}
-                  label="answers"
-                  readOnly>
+             {/*  <tr style={{position: 'relative', height: '100px', margin: '3px 3px 3px 0', alignItems:'stretch',}}>
+                <BuyButton style={{display: 'flex'}}/><br />
+                <p style={{display: 'inline', fontSize: '24', fontWeight: '900', color:'black',  margin: '10px 10px 10px 10px', padding: 0 }}>Total Due</p>
                 
-                </input>  <h2> </h2> 
-                <BuyButton className={styles.button}/>
-                </span>
-            </div>
-
+                <input style={{display: 'inline', 
+                  backgroundColor: 'bgColors.Blue', 
+                  padding:'6px', 
+                  margin:'0 20px 5px 10px', 
+                  width: '75px'}}
+                    type='text'
+                    name="utilized"
+                    id="anual"
+                    
+                    label="answers"
+                    readOnly/>  
+          </tr> */}
+          
+            </tbody>
           </table>
 
 
         </Zoom>
 
-      </div>
+      
 
-    </><VideoBg /><style jsx>{`
-        
-        a {
-          color: blue;
-        }
-      `}</style>
-      </>
-)};
+   <VideoBg />
+      
+</main>
+
+                )}

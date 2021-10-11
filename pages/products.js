@@ -10,8 +10,8 @@ export default function Home({ products }) {
   return (
     <div>
       <Head>
-        <title>Build an Ecommerce with NextJS, Magic, Strapi and Stripe</title>
-        <meta name="description" content="Learn how to build a FullStack Ecommerce in this 2 hours and a half free video sponsored by Magic" />
+        <title>Orchard Beach Community Group</title>
+        <meta name="description" content="How much we charge and what you get from it." />
       </Head>
 
       {products.map(product => (

@@ -13,7 +13,7 @@ export default function Login() {
   }
   
   return (
-    <div>
+    <div style={{marginTop:'150px'}}>
       <Head>
         <title>Login</title>
         <meta
@@ -21,7 +21,7 @@ export default function Login() {
           content="Login here to be able to purchase"
         />
       </Head>
-
+      <div className="pagestart">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -35,5 +35,6 @@ export default function Login() {
       </form>
 
     </div>
+    </div>  
   );
 }

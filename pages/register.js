@@ -25,7 +25,8 @@ const Example = () => (
   <VideoBg />
   <React.Fragment>
   <Zoom>
-    <MDBRow className='mt-5'>
+  
+    <MDBRow className='mt-4'>
       <MDBCol md='6' className='mx-auto'>
       <MDBAnimation type="flash" infinite>
       <a className={styles.a} href="/howtoreadmeter.pdf">How to read your meter?</a>
@@ -65,6 +66,7 @@ const Example = () => (
         </MDBCard>
       </MDBCol>
     </MDBRow>
+    
     </Zoom>
   </React.Fragment>
   

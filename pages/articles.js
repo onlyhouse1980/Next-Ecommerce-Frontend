@@ -27,7 +27,7 @@ const Articles = props => (
     animate="show"
     >
     <div className={styles.content}>
-    <motion.h2 variants={item} className='text-center'>Articles of Incorporation</motion.h2><br /><br />
+    <motion.h2 variants={item} className='text-center font-black' >Articles of Incorporation</motion.h2><br /><br />
     <motion.p variants={item}><b>FIRST:</b> The name of the corporation is ORCHARD BEACH COMMUNITY GROUP.</motion.p>
 ‍
 <motion.p variants={item}><b>SECOND:</b> The period of its duration is perpetual.</motion.p>

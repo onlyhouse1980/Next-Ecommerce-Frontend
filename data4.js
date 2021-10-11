@@ -1,4 +1,4 @@
-export const LastNames = [
+export const Names = [
     {
         meter_serialNum: '13391844',
         last_name: 'Main_Well',

@@ -3,7 +3,6 @@ import useSWR from 'swr'
 import styles from '../person/[meter_serialNum].module.css'
 import VideoBg from '../../components/VideoBg'
 import Zoom from 'react-reveal/Zoom';
-
 import { MDBBtn } from 'mdbreact';
 
 <div suppressHydrationWarning={true}>
@@ -25,6 +24,8 @@ const fetcher = async (url) => {
   }
   return data 
 }
+
+
 
 export default function person() {
   

@@ -6,8 +6,14 @@ import { motion } from "framer-motion";
 
 
 const index = () => (
- <div>  
+      <div>
+      
+      
+      <container className={styles.misswrap}>
+ <div className={styles.dontmove}>  
       <Carousel /> 
+</div>
+</container>
 </div>
 )
 

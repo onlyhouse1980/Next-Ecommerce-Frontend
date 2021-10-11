@@ -1,12 +1,17 @@
 .navContainer {
   position: sticky;
+  background: #000000;
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   color: white !important;
+  font-size: 24px;
+  white-space: nowrap;
+  line-height: 24px;
+  background-color: #000000;
 }
 
 .navbar ul li {
@@ -32,7 +37,7 @@
   left: 50%;
 }
 .content {
-  padding: 10px;
+  padding: 20px;
   width: fit-content;
   position: relative;
   padding-bottom: 50px;
@@ -51,11 +56,6 @@
   background-color: #3f51b5;
   z-index: 99;
   text-align: center;
-}
-
-.logo {
-  height: 50px;
-  width: auto;
 }
 
 .footerLogo {
@@ -89,21 +89,19 @@
   left: 50%;
 }
 .nav-link {
-  border-bottom: 1px solid black !important;
 }
 .navbar {
-  position: inline-block;
   top: 0;
   left: 0;
-
-  justify-content: center;
-  align-items: space-between;
   width: 100vw;
-  height: 70px;
+  height: 75px;
   color: white;
   background-color: #3f51b5;
   z-index: 100;
-  text-align: space;
+}
+
+.logoimg {
+  z-index: 999;
 }
 
 @media screen and (min-width: 600px) {

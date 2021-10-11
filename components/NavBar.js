@@ -45,11 +45,13 @@ class NavBar extends React.Component {
               href="/"><img 
               src="https://obcg.org/Images/WebPFiles/obcglogo-p-500.webp" 
               alt="logo" 
-              width={60} 
-              height={60} />
+              width={75} 
+              height={75}
+              z-index="100" />
             </a>
           </MDBNavbarBrand>
           </motion.div>
+          
           <MDBHamburgerToggler color="white" id="hamburger1" className={styles.hamburger} onClick={()=> this.toggleSingleCollapse('collapse1')} /> 
             
           <MDBCollapse isOpen={this.state.collapse1} navbar>
@@ -61,7 +63,7 @@ class NavBar extends React.Component {
             <MDBNavItem>
                 <Link href='/'>
                   <a className='nav-link' 
-                    onClick={this.toggleSingleCollapse}
+                    onClick={()=> this.toggleSingleCollapse('collapse1')}
                     >Home</a>
                 </Link>
               </MDBNavItem>
@@ -69,28 +71,28 @@ class NavBar extends React.Component {
             <motion.div whileHover={{ scale: 1.15 }} >
               <MDBNavItem>
                 <Link href='/about'>
-                  <a className='nav-link' onClick={this.toggleCollapse} >About</a>
+                  <a className='nav-link' onClick={()=> this.toggleSingleCollapse('collapse1')} >About</a>
                 </Link>
               </MDBNavItem>
             </motion.div>
             <motion.div whileHover={{ scale: 1.15 }} >
               <MDBNavItem>
                 <Link href='/articles'>
-                <a className='nav-link' onClick={this.toggleCollapse} >Articles of Incorporation</a>
+                <a className='nav-link' onClick={()=> this.toggleSingleCollapse('collapse1')} >Articles of Incorporation</a>
                 </Link>
               </MDBNavItem>
             </motion.div>
             <motion.div whileHover={{ scale: 1.15 }} >
               <MDBNavItem>
                 <Link href='/executive'>
-                  <a className='nav-link' onClick={this.toggleCollapse} >Executive Board</a>
+                  <a className='nav-link' onClick={()=> this.toggleSingleCollapse('collapse1')} >Executive Board</a>
                 </Link>
               </MDBNavItem>
               </motion.div>
               <motion.div whileHover={{ scale: 1.15 }} >
               <MDBNavItem>
                 <Link href='/register'>
-                  <a className='nav-link' onClick={this.toggleCollapse} >Check Usage</a>
+                  <a className='nav-link' onClick={()=> this.toggleSingleCollapse('collapse1')} >Check Usage</a>
                 </Link>
               </MDBNavItem>
               </motion.div>
@@ -107,27 +109,27 @@ class NavBar extends React.Component {
                   <MDBDropdownMenu>
                     <MDBDropdownItem>
                     <Link target='blank' href='/Efficiency.pdf'>
-                        <a onClick={this.toggleCollapse}>Water Use Efficiency</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>Water Use Efficiency</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                       <Link target='_blank' href='/FAQ.pdf'>
-                        <a onClick={this.toggleCollapse}>Misc.</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>Misc.</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                     <Link target='_blank' href='/Bylaws.pdf'>
-                        <a onClick={this.toggleCollapse}>Current Bylaws</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>Current Bylaws</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                     <Link target='_blank' href='/Sysplan.pdf'>
-                        <a onClick={this.toggleCollapse}>Water System Plan</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>Water System Plan</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                     <Link target='_blank' href='/consumer.pdf'>
-                        <a onClick={this.toggleCollapse}>Consumer Confidence 2020</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>Consumer Confidence 2020</a>
                       </Link>
                     </MDBDropdownItem>                     
                   </MDBDropdownMenu>
@@ -143,37 +145,37 @@ class NavBar extends React.Component {
                   <MDBDropdownMenu>
                   <MDBDropdownItem>
                     <Link target='blank' href='/minutes061221.pdf'>
-                        <a onClick={this.toggleCollapse}>2021</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2021</a>
                       </Link>
                     </MDBDropdownItem> 
                     <MDBDropdownItem>
                     <Link target='blank' href='/2020Minutes.pdf'>
-                        <a onClick={this.toggleCollapse}>2020</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2020</a>
                       </Link>
                     </MDBDropdownItem> 
                     <MDBDropdownItem>
                     <Link target='_blank' href='/2019Minutes.pdf'>
-                        <a onClick={this.toggleCollapse}>2019</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2019</a>
                       </Link>
                     </MDBDropdownItem>                   
                     <MDBDropdownItem>
                     <Link target='_blank' href='/2018Minutes.pdf'>
-                        <a onClick={this.toggleCollapse}>2018</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2018</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                     <Link target='_blank' href='/2017Minutes.pdf'>
-                        <a onClick={this.toggleCollapse}>2017</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2017</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                     <Link target='_blank' href='/2016Minutes.pdf'>
-                        <a onClick={this.toggleCollapse}>2016</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2016</a>
                       </Link>
                     </MDBDropdownItem>
                     <MDBDropdownItem>
                     <Link target='_blank' href='/2015Minutes.pdf'>
-                        <a onClick={this.toggleCollapse}>2015</a>
+                        <a onClick={()=> this.toggleSingleCollapse('collapse1')}>2015</a>
                       </Link>
                     </MDBDropdownItem>                    
                   </MDBDropdownMenu>
@@ -182,14 +184,14 @@ class NavBar extends React.Component {
               <motion.div whileHover={{ scale: 1.15 }} >
               <MDBNavItem>
                 <Link href='/contact'>
-                  <a className='nav-link' onClick={this.toggleCollapse} >Contact</a>
+                  <a className='nav-link' onClick={()=> this.toggleSingleCollapse('collapse1')} >Contact</a>
                 </Link>
               </MDBNavItem>
               </motion.div>
               <motion.div whileHover={{ scale: 1.15 }} >
               <MDBNavItem>
                 <Link href='/login'>
-                  <a className='nav-link' onClick={this.toggleCollapse} >Login</a>
+                  <a className='nav-link' onClick={()=> this.toggleSingleCollapse('collapse1')} >Login</a>
                 </Link>
               </MDBNavItem>
               </motion.div>

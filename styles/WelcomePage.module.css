@@ -1,12 +1,16 @@
 .textCenter {
+  position: fixed;
   color: white;
   text-align: center;
   z-index: 500;
 }
 .textbox {
-  position: absolute;
-  top: 100px;
-  left: 50%;
+  position: fixed;
+  top: 95px;
+  left: 5;
+}
+.wrapper {
+  background-color: black;
 }
 /* .content {
   padding: 10px;
@@ -24,21 +28,15 @@
   right: auto;
   justify-content: center;
   align-items: stretch;
-  width: 100vw;
+  width: 100%;
   color: white;
   background-color: #3f51b5;
   z-index: 99;
   text-align: center;
 }
 
-.logo {
-  height: 50px;
-  width: auto;
-}
-
 .footerLogo {
   position: static;
-  left: 0;
   bottom: 0;
   height: 56px;
   width: 72px;
@@ -54,22 +52,6 @@
   color: blue;
 }
 
-.pCenter {
-  color: yellowgreen;
-  text-align: center;
-}
-
-/*.pCenter a {
-  color: yellowgreen;
-}*/
-.Carousel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-}
 .nav-link {
   border-bottom: 1px solid black !important;
 }
@@ -94,8 +76,8 @@
 }
 
 .contentWrapper {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 100px;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -108,4 +90,31 @@
   width: 100vw;
   height: 100vh;
   z-index: -20;
+}
+
+@media only screen and (max-width: 600px) {
+  .Carousel {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -100px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+  }
+  .bgText {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 0px;
+    padding-left: 5px;
+    font-weight: 900;
+    line-height: 60px;
+    z-index: 99;
+    font-size: 64px;
+    color: white;
+    border-color: black;
+    shadow: black;
+    border-radius: 13px;
+    background: transparent;
+  }
 }

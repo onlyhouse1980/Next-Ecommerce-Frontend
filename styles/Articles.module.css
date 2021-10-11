@@ -6,16 +6,15 @@
 }
 
 .content {
-  position: absolute;
-  top: 20px;
-  left: 25%;
-  width: 100%;
-  height: fitting !important;
-  line-height: 20px;
+  position: relative;
   background-color: rgba(255, 255, 255, 0.749);
   box-shadow: 2px 2px 8px rgb(60, 60, 60);
-  padding: 15px 20px 180px 25px;
-  margin: 20px 10% 20px 20px;
+  padding: 20px;
+  padding-bottom: 100px;
+  margin: 10% 5% 2% 2%;
+  font-size: 24px;
+  line-height: 30px;
+  width: 95%;
 }
 
 .bgcontainer {
@@ -24,4 +23,27 @@
   left: 0;
   width: auto;
   height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 95%;
+    height: fitting !important;
+    line-height: 28px;
+    background-color: rgba(255, 255, 255, 0.749);
+    box-shadow: 2px 2px 8px rgb(60, 60, 60);
+    padding: 15px 20px 150px 25px;
+    margin: 5px 15px 30px 10px;
+  }
+
+  .bgcontainer {
+    display: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100vh;
+  }
 }
