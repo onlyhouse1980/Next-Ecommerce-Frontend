@@ -41,8 +41,17 @@ export default function Over() {
       var Answer = document.getElementById("Percent");
         Answer.value = (((info1 - info2) / 6000 ) * 1).toFixed(2);
       }
-
-    
+      
+      function total2(props) {
+      var arr = [document.getElementsByName('greaterThan')];
+      var total = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if(parseInt(arr[i].value));{
+          total += parseInt(arr[i].value);
+        }
+      }
+      document.getElementById('totalIt').value = total;
+      }
       
     function galOverApril() {
       if ((data.jun10_20-data.apr05_20)>6000) {
