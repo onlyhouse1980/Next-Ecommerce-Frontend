@@ -1,5 +1,5 @@
 export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:1338"
+  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1338/'
 
 export const MAGIC_PUBLIC_KEY = process.env.NEXT_PUBLIC_MAGIC_PUBLIC_KEY || 'pk_live_6CFA8CCC7EB07B41'
 

@@ -14,7 +14,7 @@ export default function Home({ products }) {
         <meta name="description" content="How much we charge and what you get from it." />
       </Head>
 
-      {products.map(product => (
+      {products.map (product => (
         <div className={styles.product}>
           <Link href={`/products/${product.slug}`}>
             <a>

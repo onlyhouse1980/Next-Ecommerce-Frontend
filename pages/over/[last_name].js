@@ -6,8 +6,6 @@ import * as React from 'react';
 import VideoBg from '../../components/VideoBg';
 import BuyButton from '../../components/BuyButton'
 
-
-
 var bgColors = { "Default": "#81b71a",
 "Blue": "#00B1E1",
 "Cyan": "#37BC9B",
@@ -813,16 +811,18 @@ function galOverAugustFees21() {
     
     const router = useRouter();
     
-    function findTotal(){
+    function findTotal(props){
       let arr = document.getElementsByName('greaterThan');
-      var tot=0;
+      let total=0;
       for(var i=0;i<arr.length;i++){
         if(parseInt(arr[i].value))
-          tot += parseInt(arr[i].value);
+          total += parseInt(arr[i].value);
       }
       var anual = document.getElementById('anual');
-      anual.value = tot;
+      props.value = total;
     }
+
+    
   return ( 
 
   
@@ -1106,7 +1106,7 @@ function galOverAugustFees21() {
                   </input>
                 </td>
               </tr>
-             {/*  <tr style={{position: 'relative', height: '100px', margin: '3px 3px 3px 0', alignItems:'stretch',}}>
+              <tr style={{position: 'relative', height: '100px', margin: '3px 3px 3px 0', alignItems:'stretch',}}>
                 <BuyButton style={{display: 'flex'}}/><br />
                 <p style={{display: 'inline', fontSize: '24', fontWeight: '900', color:'black',  margin: '10px 10px 10px 10px', padding: 0 }}>Total Due</p>
                 
@@ -1116,12 +1116,18 @@ function galOverAugustFees21() {
                   margin:'0 20px 5px 10px', 
                   width: '75px'}}
                     type='text'
-                    name="utilized"
-                    id="anual"
-                    
+                    name="total"
+                    id="total"
+                    value="0"
                     label="answers"
                     readOnly/>  
-          </tr> */}
+
+<div class="box">
+  <label>Total : </label>
+  <input type="text" id="totalIt" value="0"></input>
+</div>
+
+          </tr> 
           
             </tbody>
           </table>
@@ -1135,4 +1141,15 @@ function galOverAugustFees21() {
       
 </main>
 
-                )}
+                )
+                function getTotal(){
+                  var arr = document.getElementsByName('.greaterThan');
+                  var total = 0;
+                  for (var i = 0; i < arr.length; i++) {
+                    if(parseInt(arr[i].value));{
+                      total += parseInt(arr[i].value);
+                    }
+                  }
+                  document.getElementById('total').value = total;
+                }
+              }

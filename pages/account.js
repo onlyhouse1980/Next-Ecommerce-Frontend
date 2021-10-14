@@ -6,6 +6,29 @@ import styles from '../styles/Account.module.css'
 import AuthContext from "../context/AuthContext";
 import { API_URL } from '../utils/urls'
 
+export default function Account() {
+    const { user, logoutUser } =useContext(AuthContext)
+
+    if(!user){
+        return (
+            <div>
+                <p>Please Login or Register</p>
+                <Link href="/"><a>Go Back</a></Link>
+            </div>
+        )
+    }
+    return (
+        <div>
+            <Head>
+                <title>Account Page</title>
+                <meta name="description" content="account page view orders" />
+            </Head>
+
+            <h2>Account page</h2>
+            <a href="#" onClick={logoutUser}>Logout</a>
+        </div>
+    )
+}
 const useOrders = (user, getToken) => {
     const [orders, setOrders] = useState([])
     const [loading, setLoading] = useState(false)
@@ -34,25 +57,25 @@ const useOrders = (user, getToken) => {
 
 
 
-    return {orders, loading}
-}
+//    return {orders, loading}
+//}
 
-const Account = () => {
+// const Account = () => {
 
-    const { user, logoutUser, getToken} = useContext(AuthContext)
+//     const { user, logoutUser, getToken} = useContext(AuthContext)
 
-    const { orders, loading } = useOrders(user, getToken)
+//     const { orders, loading } = useOrders(user, getToken)
     
-    if(!user){
-        return (
-            <div className={styles.notuser}>
-                <p>Please Login or Register before accessing this page</p>
-                <Link href="/"><a>Go Back</a></Link>
-            </div>
-        )
-    }
+//     if(!user){
+//         return (
+//             <div className={styles.notuser}>
+//                 <p>Please Login or Register before accessing this page</p>
+//                 <Link href="/"><a>Go Back</a></Link>
+//             </div>
+//         )
+//     }
 
-    return (
+     return (
         <div>
             <Head>
                 <title>Your Account</title>
@@ -73,8 +96,6 @@ const Account = () => {
             
             <p className={styles.inas}><a href="#" onClick={logoutUser}>Logout</a></p>
         </div>
-    )
+     )
 
-};
-
-export default Account;
+ };
